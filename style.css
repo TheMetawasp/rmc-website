@@ -1,0 +1,1077 @@
+
+:root{
+  --rmc-navy:#17365C;
+  --rmc-deep-navy:#252F53;
+  --rmc-gold:#AD9E72;
+  --rmc-ink:#0B1220;
+  --rmc-mist:#B1B5C2;
+  --rmc-steel:#9CA8B6;
+  --rmc-offwhite:#FBFBFC;
+  --rmc-white:#FFFFFF;
+  --radius:18px;
+  --shadow: 0 14px 40px rgba(11,18,32,.14);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Source Serif 4", ui-serif, Georgia, serif;
+  color:var(--rmc-ink);
+  background:var(--rmc-offwhite);
+  line-height:1.55;
+}
+a{color:inherit}
+.container{max-width:1200px;margin:0 auto;padding:0 22px}
+.small{font-size:14px;color:rgba(255,255,255,.80)}
+.muted{color:rgba(11,18,32,.70)}
+.hr-gold{height:1px;background:rgba(173,158,114,.55);border:0;margin:18px 0}
+
+.topbar{
+  background:linear-gradient(90deg,var(--rmc-deep-navy),var(--rmc-navy));
+  color:#fff;
+}
+.masthead{
+  display:flex;align-items:center;gap:18px;
+  padding:22px 0 10px 0;
+}
+.brand{
+  display:flex;align-items:center;gap:18px;flex:1;
+}
+.brand img{height:72px;width:auto;display:block}
+.brand-title{
+  display:flex;flex-direction:column;gap:4px;
+}
+.brand-title .name{
+  font-family:"Cormorant Garamond", ui-serif, Georgia, serif;
+  font-weight:600;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-size:30px;
+  line-height:1.1;
+}
+.brand-title .tag{
+  font-family:"Cormorant Garamond", ui-serif, Georgia, serif;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:13px;
+  color:rgba(255,255,255,.85);
+}
+.utility{
+  display:flex;gap:10px;align-items:center;justify-content:flex-end;flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:11px 14px;border-radius:999px;
+  text-decoration:none;font-weight:600;
+  font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size:13px;letter-spacing:.02em;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.08);
+  color:#fff;
+}
+.btn.primary{
+  background:rgba(173,158,114,.98);
+  border-color:rgba(173,158,114,.98);
+  color:#0B1220;
+}
+.navbar{
+  border-top:1px solid rgba(255,255,255,.14);
+  padding:10px 0 14px 0;
+}
+.nav{
+  display:flex;gap:18px;flex-wrap:wrap;
+  font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size:13px;
+  letter-spacing:.02em;
+  color:rgba(255,255,255,.86);
+}
+.nav a{text-decoration:none;color:inherit;padding:8px 0}
+.nav a.active{color:#fff;border-bottom:1px solid rgba(173,158,114,.9)}
+
+.hero{
+  position:relative;
+  min-height:520px;
+  background:
+    linear-gradient(90deg, rgba(23,54,92,.90), rgba(37,47,83,.88)),
+    url("assets/hero_bg.jpg") center/cover no-repeat;
+  color:#fff;
+}
+.hero::after{
+  content:"";
+  position:absolute;inset:0;
+  background:url("assets/watermark.png") no-repeat;
+  background-size:720px 720px;
+  background-position:calc(100% - 60px) calc(100% - 40px);
+  opacity:.35;
+  pointer-events:none;
+}
+.hero-inner{position:relative;z-index:2;padding:62px 0}
+.hero h1{
+  font-family:"Cormorant Garamond", ui-serif, Georgia, serif;
+  font-weight:600;
+  font-size:54px;
+  margin:0 0 10px 0;
+  letter-spacing:.02em;
+}
+.hero p{max-width:760px;font-size:18px;margin:0 0 18px 0;color:rgba(255,255,255,.90)}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.hero .btn{padding:13px 18px}
+.credentials{
+  background:#fff;
+  border-bottom:1px solid rgba(11,18,32,.06);
+}
+.credentials .row{
+  display:flex;gap:10px;flex-wrap:wrap;
+  padding:14px 0;
+  font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size:13px;
+  color:rgba(11,18,32,.78);
+}
+.credentials .sep{color:rgba(173,158,114,.95)}
+
+.section{padding:54px 0}
+.section h2{
+  font-family:"Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size:34px;margin:0 0 10px 0
+}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{
+  background:#fff;border:1px solid rgba(11,18,32,.06);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:0 1px 0 rgba(11,18,32,.02);
+  min-height:150px;
+}
+.card h3{
+  margin:0 0 8px 0;
+  font-family:"Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size:22px;
+}
+.card p{margin:0;color:rgba(11,18,32,.74)}
+.two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(11,18,32,.74);
+}
+.badge .dot{width:8px;height:8px;border-radius:50%;background:var(--rmc-gold)}
+.dark{
+  background:linear-gradient(90deg,var(--rmc-deep-navy),var(--rmc-navy));
+  color:#fff;
+}
+.dark .muted{color:rgba(255,255,255,.82)}
+.dark .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
+.dark a{color:#fff}
+.list{margin:10px 0 0 0;padding-left:18px}
+.list li{margin:6px 0}
+.quote{
+  font-style:italic;
+  color:rgba(11,18,32,.78);
+}
+.dark .quote{color:rgba(255,255,255,.90)}
+.people{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:14px;
+}
+.person{
+  background:#fff;border:1px solid rgba(11,18,32,.06);
+  border-radius:var(--radius);padding:16px;
+}
+.person .n{font-weight:700}
+.person .r{color:rgba(11,18,32,.70);font-size:14px}
+.person .q{margin-top:8px;font-style:italic;color:rgba(11,18,32,.78)}
+.dark .person{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12)}
+.dark .person .r{color:rgba(255,255,255,.82)}
+.dark .person .q{color:rgba(255,255,255,.90)}
+.footer{
+  background:#0B1220;color:rgba(255,255,255,.86);
+  padding:34px 0;margin-top:30px
+}
+.footer a{color:#fff}
+.footer .cols{display:grid;grid-template-columns:1.2fr .8fr;gap:22px}
+.footer .legal{font-size:12px;color:rgba(255,255,255,.72);margin-top:12px}
+@media (max-width:1000px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .two-col{grid-template-columns:1fr}
+  .hero h1{font-size:44px}
+  .brand img{height:62px}
+  .brand-title .name{font-size:26px}
+}
+@media (max-width:600px){
+  .grid-4{grid-template-columns:1fr}
+  .people{grid-template-columns:1fr}
+  .hero h1{font-size:38px}
+}
+
+/* --- People cards --- */
+.people-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:18px;
+  margin-top:16px;
+}
+.person-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;
+  padding:18px;
+  backdrop-filter: blur(6px);
+}
+.person-card.featured{
+  grid-column: span 3;
+  background:rgba(173,158,114,.10);
+  border-color:rgba(173,158,114,.35);
+}
+.person-card h3, .person-card h4{margin:0 0 8px 0}
+.person-card .meta{
+  font-weight:600;
+  opacity:.9;
+  margin-bottom:10px;
+}
+.person-card .creds{
+  font-size:.95rem;
+  opacity:.85;
+  margin-bottom:6px;
+}
+.person-card .quote{
+  font-style:italic;
+  opacity:.95;
+  margin:0;
+}
+.section-kicker{
+  margin-top:22px;
+  margin-bottom:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.9;
+}
+.refine-list{
+  margin:12px 0 0 18px;
+}
+@media (max-width: 980px){
+  .people-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+  .person-card.featured{grid-column:span 2}
+}
+@media (max-width: 640px){
+  .people-grid{grid-template-columns:1fr}
+  .person-card.featured{grid-column:span 1}
+}
+
+/* === FORCE LARGE LEFT EMBLEM (RMC) === */
+.topbar{
+}
+.masthead{align-items:center;}
+.brand img{
+  height: 150px !important;
+  width: auto !important;
+  max-width: none !important;
+}
+@media (max-width: 980px){
+  .brand img{height:120px !important;}
+}
+@media (max-width: 640px){
+  .brand img{height:90px !important;}
+}
+
+/* === HEADER PATTERN: TRUE UNIFIED TILE === */
+.topbar{
+  background-color: rgba(23,54,92,0.96) !important;
+  background-repeat: repeat, repeat !important;
+  background-size: auto, auto !important; /* prevent scaling mismatch */
+  background-position: 0 0, 0 0 !important;
+}
+.brand, .brand * { background: transparent !important; }
+.brand img{ display:block; }
+
+/* === Header Wordmark: Match Reference Screenshot (No Repetition) === */
+.wordmark, .wordmark *{
+  font-family: "EB Garamond","Adobe Garamond Pro","Garamond","Times New Roman",serif !important;
+  font-kerning: normal;
+}
+.wordmark{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.wordmark-title{
+  margin:0;
+  font-weight:600;
+  font-size:56px;
+  line-height:1.05;
+  letter-spacing:0.06em;
+  color: rgba(255,255,255,.96);
+  white-space: nowrap;
+}
+.wordmark-advocates{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  width:100%;
+  max-width: 820px;
+}
+.wordmark-advocates .rule{
+  height:2px;
+  flex:1 1 auto;
+  background: rgba(183,164,107,.55);
+}
+.wordmark-advocates .label{
+  margin:0;
+  font-weight:600;
+  font-size:22px;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#b7a46b;
+}
+.wordmark-commissioner{
+  margin:0;
+  font-weight:600;
+  font-size:18px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:#b7a46b;
+  opacity:.95;
+  white-space: nowrap;
+}
+@media (max-width: 980px){
+  .wordmark{min-width:0; gap:8px;}
+  .wordmark-title{font-size:42px; white-space:normal;}
+  .wordmark-advocates .label{font-size:18px;}
+  .wordmark-commissioner{font-size:14px; white-space:normal;}
+}
+
+/* Header layout guardrails */
+.masthead{display:flex; align-items:center; gap:18px;}
+.header-actions{flex:0 0 auto;}
+
+/* === Header Wordmark: Reference Match (Cormorant Garamond) === */
+.wordmark, .wordmark *{
+  font-family: "Cormorant Garamond","Adobe Garamond Pro","Garamond","Times New Roman",serif !important;
+  font-kerning: normal;
+}
+.wordmark-title{
+  font-weight: 600;
+  font-size: 58px;
+  letter-spacing: 0.06em;
+  line-height: 1.05;
+  color: rgba(255,255,255,.96);
+  white-space: nowrap;
+  margin: 0;
+}
+.wordmark-advocates .label{
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 0.22em;
+  color: #b7a46b;
+}
+.wordmark-commissioner{
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  color: #b7a46b;
+  text-transform: uppercase;
+}
+@media (max-width: 980px){
+  .wordmark-title{font-size: 44px; white-space: normal;}
+  .wordmark-advocates .label{font-size: 18px;}
+  .wordmark-commissioner{font-size: 14px;}
+}
+
+/* === Header buttons with icons (simple, reliable) === */
+.btn-icon{display:inline-flex;align-items:center;gap:10px}
+.btn-icon .icon{font-size:16px;line-height:1}
+.navbar{display:block}
+
+/* === Layout Safety: No Horizontal Scrolling === */
+html, body { max-width: 100%; overflow-x: hidden; }
+img, svg { max-width: 100%; height: auto; }
+.container { max-width: 1200px; width: 100%; padding-left: 18px; padding-right: 18px; margin: 0 auto; }
+
+/* === Header alignment refinements === */
+.masthead { flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 18px; min-width: 0; }
+.wordmark { min-width: 0; }
+.wordmark-title { white-space: nowrap; }
+.wordmark-advocates, .wordmark-commissioner { justify-content: flex-start; }
+.wordmark-advocates { max-width: 820px; }
+.wordmark-commissioner { line-height: 1.2; white-space: normal; }
+
+/* Keep advocates + commissioner visually aligned under the title */
+.wordmark-advocates { margin-top: 6px; }
+.wordmark-commissioner { margin-top: 2px; }
+
+/* Buttons never push layout off-screen */
+.header-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; min-width: 0; }
+.header-actions .btn { max-width: 100%; white-space: nowrap; }
+@media (max-width: 1100px){
+  .header-actions { justify-content: flex-start; }
+}
+
+/* Nav wraps and stays within width */
+.nav { display: flex; flex-wrap: wrap; gap: 18px; }
+.nav a { white-space: nowrap; }
+
+/* Mobile/title wrapping */
+@media (max-width: 980px){
+  .wordmark-title { white-space: normal; }
+  .wordmark-advocates { max-width: 100%; }
+}
+
+.nav-consults{display:flex;gap:8px;margin-left:auto;}
+.nav-consults .btn{padding:6px 10px;font-size:12px;}
+.brand{align-items:flex-start;}
+.wordmark{max-width:720px;}
+.hero, .hero .container{overflow:visible;}
+.hero p{max-width:100%;}
+
+/* === Hero typography refinement for above-the-fold visibility === */
+.hero h1{
+  font-size: 32px; /* reduced to fit without scrolling */
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.hero p{
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 100%;
+}
+@media (max-width: 1200px){
+  .hero h1{font-size:28px;}
+}
+@media (max-width: 768px){
+  .hero h1{font-size:24px;}
+  .hero p{font-size:15px;}
+}
+
+/* === Hero Boutique Layout === */
+.hero-body{
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap:40px;
+  align-items:start;
+}
+.hero-left p{
+  text-align: justify;
+  font-size:16px;
+  line-height:1.65;
+}
+.hero-right ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.hero-right li{
+  padding:10px 0;
+  border-bottom:1px solid rgba(183,164,107,0.35);
+  font-weight:500;
+}
+@media (max-width: 900px){
+  .hero-body{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+}
+
+/* === Header Center Alignment === */
+.wordmark{
+  align-items: center !important;
+  text-align: center !important;
+}
+.wordmark-title,
+.wordmark-advocates,
+.wordmark-commissioner{
+  text-align: center !important;
+  justify-content: center !important;
+}
+.wordmark-advocates .rule{
+  max-width: 120px;
+}
+
+/* === Prevent Emblem / Wordmark Overlap === */
+.brand{
+  flex-direction: column; /* stack emblem and text */
+  align-items: center;
+  gap: 14px;
+}
+.brand img{
+  display:block;
+  margin: 0 auto;
+}
+.wordmark{
+  max-width: 100%;
+}
+
+/* === Header: Emblem Left, Wordmark Centered (No Overlap) === */
+.brand{
+  display:grid !important;
+  grid-template-columns: auto 1fr;
+  align-items:center;
+  column-gap: 18px;
+  min-width: 0;
+}
+.brand img{
+  height: 130px !important; /* keep prominent */
+  width: auto !important;
+  max-width: none !important;
+}
+.wordmark{
+  align-items: center !important;
+  text-align: center !important;
+  min-width: 0;
+}
+.wordmark-title{white-space: nowrap;}
+@media (max-width: 980px){
+  .brand img{height: 105px !important;}
+  .wordmark-title{white-space: normal;}
+}
+
+/* Make R M C slightly larger */
+.rmc-init{
+  font-size: 1.06em; /* ~ +1pt */
+  display:inline-block;
+}
+
+/* Ensure masthead allows wrapping without overflow */
+.masthead{flex-wrap: wrap;}
+
+/* === Increase R M C Emphasis Further === */
+.rmc-init{
+  font-size: 1.14em; /* slightly more pronounced, still elegant */
+}
+
+/* === Our Approach Option B (Text left, Image right) === */
+.approach-grid{
+  display:grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap:40px;
+  align-items:start;
+}
+.approach-text p{ text-align: justify; }
+.approach-image img{
+  width:100%;
+  height:auto;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.10);
+}
+@media (max-width: 900px){
+  .approach-grid{ grid-template-columns:1fr; gap:24px; }
+}
+
+/* === Google Map Embed === */
+.map-embed{
+  width:100%;
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow: 0 12px 24px rgba(0,0,0,.22);
+}
+.map-embed iframe{
+  width:100%;
+  height:360px;
+  border:0;
+  display:block;
+}
+@media (max-width: 768px){
+  .map-embed iframe{height:300px;}
+}
+
+/* === Subtle Homepage Transitions (Primerus-appropriate) === */
+@media (prefers-reduced-motion: reduce){
+  *{scroll-behavior:auto !important; transition:none !important; animation:none !important;}
+}
+
+.reveal{
+  opacity:0;
+  transform: translateY(10px);
+  transition: opacity 650ms ease, transform 650ms ease;
+}
+.reveal.in{
+  opacity:1;
+  transform:none;
+}
+
+/* Gentle hover cues */
+.nav a, .btn{
+  transition: transform 160ms ease, opacity 160ms ease, box-shadow 160ms ease;
+}
+.btn:hover{ transform: translateY(-1px); }
+.card:hover{ transform: translateY(-2px); }
+
+/* Hero entrance */
+.hero .hero-body, .hero h1{
+  animation: heroIn 700ms ease both;
+}
+@keyframes heroIn{
+  from{opacity:0; transform: translateY(10px);}
+  to{opacity:1; transform:none;}
+}
+
+/* === Global Motion System (Primerus-grade, subtle) === */
+html.js{opacity:0;}
+html.js.page-in{opacity:1; transition: opacity 320ms ease;}
+
+@media (prefers-reduced-motion: reduce){
+  html.js{opacity:1;}
+  *{scroll-behavior:auto !important; transition:none !important; animation:none !important;}
+}
+
+/* Reveal with stagger */
+.reveal{
+  opacity:0;
+  transform: translateY(12px);
+  transition: opacity 650ms ease, transform 650ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.in{
+  opacity:1;
+  transform:none;
+}
+
+/* Navigation: underline slide + active state */
+.nav a{
+  position: relative;
+  padding-bottom: 6px;
+}
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:2px;
+  background: rgba(183,164,107,0.95);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease, opacity 220ms ease;
+  opacity:0.0;
+}
+.nav a:hover::after,
+.nav a:focus-visible::after{
+  transform: scaleX(1);
+  opacity:0.85;
+}
+.nav a.active::after{
+  transform: scaleX(1);
+  opacity:1;
+}
+
+/* Buttons: refined hover + focus */
+.btn{
+  transition: transform 160ms ease, box-shadow 220ms ease, background-color 220ms ease, border-color 220ms ease, opacity 160ms ease;
+  will-change: transform;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn:active{ transform: translateY(0px); }
+.btn:focus-visible{
+  outline: 2px solid rgba(183,164,107,0.9);
+  outline-offset: 3px;
+}
+
+/* Cards / panels: elevate on hover (desktop only) */
+@media (hover:hover) and (pointer:fine){
+  .card, .practice-card, .people-card{
+    transition: transform 200ms ease, box-shadow 240ms ease, border-color 240ms ease;
+  }
+  .card:hover, .practice-card:hover, .people-card:hover{
+    transform: translateY(-3px);
+  }
+}
+
+/* Header: subtle separation on scroll */
+.topbar{
+  transition: box-shadow 220ms ease, background-color 220ms ease, backdrop-filter 220ms ease;
+}
+.topbar.scrolled{
+  box-shadow: 0 10px 24px rgba(0,0,0,.22);
+}
+
+/* Images: gentle zoom on hover within key blocks */
+@media (hover:hover) and (pointer:fine){
+  .approach-image img, .hero-right img, .split img{
+    transition: transform 320ms ease;
+  }
+  .approach-image img:hover, .hero-right img:hover, .split img:hover{
+    transform: scale(1.01);
+  }
+}
+
+/* === Brand (Emblem & Letterhead) Transitions === */
+
+/* Emblem entrance */
+.brand img{
+  transform: scale(0.96);
+  opacity: 0;
+  transition: transform 520ms ease, opacity 520ms ease;
+}
+html.page-in .brand img{
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Emblem hover (very subtle) */
+@media (hover:hover) and (pointer:fine){
+  .brand img:hover{
+    transform: scale(1.02);
+  }
+}
+
+/* Letterhead (Firm name + designation) entrance */
+.wordmark-title,
+.wordmark-advocates,
+.wordmark-commissioner{
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+/* Staggered reveal */
+html.page-in .wordmark-title{
+  opacity: 1;
+  transform: none;
+  transition-delay: 120ms;
+}
+html.page-in .wordmark-advocates{
+  opacity: 1;
+  transform: none;
+  transition-delay: 220ms;
+}
+html.page-in .wordmark-commissioner{
+  opacity: 1;
+  transform: none;
+  transition-delay: 320ms;
+}
+
+/* === Emblem & Firm Name (Wordmark) Transitions === */
+
+/* Initial state */
+.brand img,
+.wordmark-title{
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+}
+
+/* On page load */
+html.page-in .brand img{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+html.page-in .wordmark-title{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 520ms ease, transform 520ms ease;
+  transition-delay: 140ms;
+}
+
+/* Hover micro-interaction (desktop only) */
+@media (hover:hover) and (pointer:fine){
+  .brand img:hover{
+    transform: scale(1.025);
+  }
+  .wordmark-title:hover{
+    letter-spacing: 0.02em;
+  }
+}
+
+/* === Page-to-page crossfade === */
+html.js.page-out{ opacity:0; transition: opacity 180ms ease; }
+
+/* === Gold accent shimmer (very subtle) === */
+.wordmark-title{
+  position: relative;
+  overflow: hidden;
+}
+@media (prefers-reduced-motion: reduce){
+  .wordmark-title::after{ display:none !important; }
+}
+.wordmark-title::after{
+  content:"";
+  position:absolute;
+  top:-20%;
+  left:-60%;
+  width:40%;
+  height:140%;
+  background: linear-gradient(115deg,
+    rgba(183,164,107,0) 0%,
+    rgba(183,164,107,0.18) 45%,
+    rgba(183,164,107,0.38) 55%,
+    rgba(183,164,107,0.14) 65%,
+    rgba(183,164,107,0) 100%
+  );
+  transform: skewX(-20deg);
+  opacity:0;
+  pointer-events:none;
+}
+html.page-in .wordmark-title::after{
+  animation: shimmerOnce 1.2s ease 520ms 1 both;
+}
+@keyframes shimmerOnce{
+  0%{ left:-60%; opacity:0; }
+  10%{ opacity:1; }
+  60%{ opacity:1; }
+  100%{ left:120%; opacity:0; }
+}
+
+
+/* === Typography Hierarchy (International / Referral Standard) === */
+
+body{
+  line-height:1.65;
+  letter-spacing:0.01em;
+}
+
+/* Headings */
+h1{
+  font-size:2.6rem;
+  letter-spacing:0.03em;
+  margin-bottom:0.6em;
+}
+
+h2{
+  font-size:2.1rem;
+  letter-spacing:0.02em;
+  margin-bottom:0.7em;
+}
+
+h3{
+  font-size:1.6rem;
+  letter-spacing:0.015em;
+  margin-bottom:0.6em;
+}
+
+h4{
+  font-size:1.25rem;
+  letter-spacing:0.01em;
+}
+
+/* Section intros */
+.section-intro,
+.lead,
+.hero p{
+  font-size:1.08rem;
+  line-height:1.75;
+  max-width:820px;
+}
+
+/* Body text refinement */
+p, li{
+  font-size:0.98rem;
+  line-height:1.7;
+}
+
+/* Practice / profile emphasis */
+.practice-card h3,
+.people-card h3{
+  font-size:1.15rem;
+  letter-spacing:0.02em;
+}
+
+/* Quotes */
+blockquote,
+.quote{
+  font-style:italic;
+  line-height:1.7;
+  border-left:3px solid rgba(183,164,107,0.7);
+  padding-left:18px;
+  margin:22px 0;
+}
+
+/* Footer text */
+footer{
+  font-size:0.9rem;
+  line-height:1.6;
+}
+
+/* Responsive tuning */
+@media (max-width:768px){
+  h1{font-size:2.1rem;}
+  h2{font-size:1.8rem;}
+  h3{font-size:1.4rem;}
+  p,li{font-size:0.95rem;}
+}
+
+/* === Utility layouts for new pages === */
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+.grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;}
+.intake-form{display:grid; gap:12px; margin-top:14px;}
+.intake-form input,.intake-form select,.intake-form textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.04);
+  color: inherit;
+}
+.intake-form label{font-weight:500;}
+.btn-ghost{
+  background: transparent !important;
+  border: 1px solid rgba(183,164,107,.55) !important;
+}
+@media (max-width: 900px){
+  .grid-3{grid-template-columns:1fr;}
+  .grid-2{grid-template-columns:1fr;}
+  .two-col{columns:1;}
+}
+
+/* === Navigation density tweaks (more links, still clean) === */
+.nav{
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.nav .nav-consults{
+  margin-left: auto;
+}
+@media (max-width: 980px){
+  .nav .nav-consults{ width:100%; margin-left:0; display:flex; gap:10px; }
+  .nav .nav-consults .btn{ flex:1; justify-content:center; }
+}
+
+/* Columnar list for Selected Matters (does not override .two-col layout) */
+.two-column-list{columns:2; column-gap:32px;}
+.two-column-list li{break-inside:avoid; margin-bottom:10px;}
+@media (max-width: 900px){
+  .two-column-list{columns:1;}
+}
+
+/* === Navigation dropdowns (Primerus-style) === */
+.nav-item{position:relative; display:flex; align-items:center;}
+.nav-link{display:inline-flex; align-items:center; gap:6px;}
+.has-dropdown > .nav-link::after{
+  content:"▾";
+  font-size:0.85em;
+  opacity:0.75;
+  transform: translateY(-1px);
+}
+.dropdown{
+  position:absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 240px;
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(8, 18, 28, 0.96);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+  display:none;
+  z-index: 50;
+}
+.dropdown a{
+  display:block;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: inherit;
+  text-decoration:none;
+  font-weight: 500;
+}
+.dropdown a:hover{
+  background: rgba(183,164,107,.12);
+}
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown{
+  display:block;
+}
+
+/* Mobile: keep menus accessible without hover */
+@media (max-width: 980px){
+  .dropdown{
+    position: static;
+    display:block;
+    padding: 0;
+    margin: 8px 0 0 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  .dropdown a{
+    padding: 8px 0;
+    border-radius: 0;
+    opacity: .95;
+  }
+  .has-dropdown > .nav-link::after{ display:none; }
+}
+
+/* Homepage Photo Grid */
+.photo-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap:28px;
+  margin:60px auto;
+  max-width:1200px;
+  padding:0 20px;
+}
+.photo-card{
+  background:#0b1a2b;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,.35);
+  transition:transform .4s ease, box-shadow .4s ease;
+}
+.photo-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(0,0,0,.45);
+}
+.photo-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+.photo-card h4{
+  padding:18px;
+  text-align:center;
+  color:#d4b46a;
+  font-weight:600;
+}
+
+/* === Homepage photography enhancements === */
+.hero.hero-photo{
+  position: relative;
+  background: linear-gradient(90deg, rgba(10,20,34,.82) 0%, rgba(10,20,34,.55) 45%, rgba(10,20,34,.35) 100%), url("assets/images/hero-nairobi.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.hero.hero-photo::after{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+  background: radial-gradient(1200px 500px at 30% 30%, rgba(183,164,107,.18), transparent 55%);
+}
+.hero.hero-photo > *{ position: relative; z-index:1; }
+
+.media-grid .media-card{
+  overflow:hidden;
+  padding:0;
+  border:1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  text-decoration:none;
+  color: inherit;
+}
+.media-card img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+  display:block;
+  transform: scale(1.01);
+  transition: transform .6s ease;
+}
+.media-card:hover img{ transform: scale(1.06); }
+
+.media-overlay{
+  padding:16px 16px 18px;
+}
+.media-overlay h3{ margin:0 0 6px 0; }
+.media-overlay p{ margin:0; }
+
+.section.credibility{
+  background:
+    linear-gradient(90deg, rgba(10,20,34,.88) 0%, rgba(10,20,34,.70) 45%, rgba(10,20,34,.55) 100%),
+    url("assets/images/home-credibility.jpg");
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 980px){
+  .media-card img{ height:220px; }
+}
