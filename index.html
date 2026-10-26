@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@500;600&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LegalService", "name": "Rodgers Mwangi & Company Advocates", "url": "https://www.rmcadvocates.com", "areaServed": "Nairobi, Kenya", "address": {"@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE"}, "email": "info@rmc-advocates.com"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LegalService", "name": "Rodgers Mwangi & Company Advocates", "url": "https://www.rmc-advocates.com", "areaServed": "Nairobi, Kenya", "address": {"@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE"}, "email": "info@rmc-advocates.com"}</script>
 </head>
 <body>
     <div class="topbar">
@@ -37,10 +37,13 @@
             <div class="wordmark-commissioner">Commissioner for Oaths and Notary Public</div>
           </div>
         </div>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+          <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+        </button>
         
       </div>
       <div class="navbar">
-        <nav class="nav" aria-label="Primary navigation">
+        <nav class="nav" id="primary-nav" aria-label="Primary navigation">
           <a href="index.html">Home</a>
           <a href="the-firm.html">The Firm</a>
           <a href="practice-areas.html">Practice Areas</a>
@@ -55,7 +58,13 @@
             </div>
           </div>
 
-          <a href="insights.html">Insights</a>
+          <div class="nav-item has-dropdown">
+            <a href="insights.html" class="nav-link">Insights</a>
+            <div class="dropdown" role="menu" aria-label="Insights menu">
+              <a href="insights.html" role="menuitem">Briefings</a>
+              <a href="gazette.html" role="menuitem">Kenya Gazette</a>
+            </div>
+          </div>
 
           <div class="nav-item has-dropdown">
             <a href="international-counsel.html" class="nav-link">International</a>
@@ -67,6 +76,7 @@
           </div>
 
           <a href="contact.html">Contact</a>
+          <a href="zh.html" lang="zh-Hans" class="nav-zh">中文</a>
 
           <div class="nav-consults">
             <a class="btn btn-icon" href="mailto:info@rmc-advocates.com?subject=Initial%20Client%20Consult%20Request&body=Good%20day%2C%0A%0AI%20would%20like%20to%20book%20an%20initial%20client%20consult.%0A%0AName%3A%0APhone%3A%0AMatter%20summary%3A%0A%0AKind%20regards%2C">
@@ -81,7 +91,7 @@
               </span>
               <span>Book Consult (WhatsApp)</span>
             </a>
-            <a class="btn" href="#" title="微信号 WeChat ID: RMC_Advocates" onclick="try{navigator.clipboard.writeText('RMC_Advocates');}catch(e){}alert('微信号已复制 / WeChat ID copied:\n\nRMC_Advocates\n\n请在微信中搜索添加 / Search this ID in WeChat to add us.');return false;">
+            <a class="btn" href="zh.html#zh-contact" title="微信号 WeChat ID: RMC_Advocates" lang="zh-Hans">
               <span class="btn-ico" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.69 4C4.99 4 2 6.55 2 9.7c0 1.79.97 3.38 2.49 4.42l-.62 1.88 2.18-1.1c.55.15 1.12.25 1.72.28-.11-.4-.17-.81-.17-1.24 0-3.02 2.93-5.46 6.55-5.46.23 0 .46.01.68.03C14.19 6.08 11.69 4 8.69 4zM6.5 8.28c-.46 0-.83-.37-.83-.83s.37-.83.83-.83.83.37.83.83-.37.83-.83.83zm4.4 0c-.46 0-.83-.37-.83-.83s.37-.83.83-.83.83.37.83.83-.38.83-.83.83zM22 13.94c0-2.6-2.53-4.7-5.65-4.7s-5.65 2.1-5.65 4.7 2.53 4.7 5.65 4.7c.62 0 1.22-.08 1.78-.23l1.94.98-.54-1.65C20.99 16.86 22 15.49 22 13.94zm-7.55-.72c-.38 0-.69-.31-.69-.69s.31-.69.69-.69.69.31.69.69-.31.69-.69.69zm3.8 0c-.38 0-.69-.31-.69-.69s.31-.69.69-.69.69.31.69.69-.31.69-.69.69z"/></svg>
               </span>
@@ -95,7 +105,6 @@
 
   
 <section class="hero hero-photo">
-<style>.hero{background:url(assets/images/hero.jpg) center/cover no-repeat;}</style>
   <div class="container hero-inner">
     <h1>Strategic Legal Advisory and Dispute Representation in Complex Commercial, Property, and Regulatory Matters</h1>
     <div class="hr-gold"></div>
@@ -110,11 +119,11 @@
 
 <div class="photo-grid">
   <div class="photo-card">
-    <img src="assets/images/practice1.jpg" alt="Commercial Advisory">
+    <img src="assets/images/clean/practice-commercial.jpg" alt="Commercial Advisory">
     <h4>Commercial & Corporate Advisory</h4>
   </div>
   <div class="photo-card">
-    <img src="assets/images/practice2.jpg" alt="Dispute Resolution">
+    <img src="assets/images/clean/scales-of-justice.jpg" alt="Dispute Resolution">
     <h4>Dispute Resolution & Litigation</h4>
   </div>
   <div class="photo-card">
@@ -135,6 +144,69 @@
   </div>
 
 </section>
+
+<section class="section steps-section">
+  <div class="container">
+    <div class="badge"><span class="dot"></span>How to Instruct Us</div>
+    <h2>Instruct us in three steps</h2>
+    <p class="muted steps-intro">A clear path from first contact to a working mandate, for local clients and overseas counsel alike.</p>
+    <ol class="steps">
+      <li class="step">
+        <span class="step-num">1</span>
+        <h3>Send your instructions</h3>
+        <p class="muted">Email, WhatsApp or our Submit Instructions form. A short summary and the key documents are enough to start.</p>
+      </li>
+      <li class="step">
+        <span class="step-num">2</span>
+        <h3>Conflict check &amp; engagement letter</h3>
+        <p class="muted">We run a conflict check and, where we can act, send a scoped engagement letter with fees, typically within one business day.</p>
+      </li>
+      <li class="step">
+        <span class="step-num">3</span>
+        <h3>Your advocate &amp; reporting schedule</h3>
+        <p class="muted">A named advocate leads the matter, with an agreed reporting rhythm (weekly or at each milestone) in your time zone.</p>
+      </li>
+    </ol>
+    <div class="steps-ctas">
+      <a class="btn primary" href="submit-instructions.html">Submit Instructions</a>
+      <a class="btn btn-outline" href="https://wa.me/254795973253?text=Good%20day%2C%20I%20would%20like%20to%20instruct%20RMC%20Advocates%20on%20a%20matter.%20Brief%20summary%3A%20">Instruct via WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="notary-strip">
+  <div class="container">
+    <div class="notary-card">
+      <div class="notary-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="30" height="30"><path fill="currentColor" d="M12 2a4 4 0 0 0-4 4c0 1.6.9 2.9 2 3.6V12H7a3 3 0 0 0-3 3v2h16v-2a3 3 0 0 0-3-3h-3V9.6c1.1-.7 2-2 2-3.6a4 4 0 0 0-4-4zM4 19v3h16v-3H4z"/></svg>
+      </div>
+      <div class="notary-text">
+        <h3>Need a document notarised or commissioned?</h3>
+        <p>Affidavits, statutory declarations, certified copies and notarial certificates for use in Kenya and abroad. Seen by appointment at View Park Towers, 8th Floor.</p>
+      </div>
+      <div class="notary-ctas">
+        <a class="btn btn-gold btn-icon" href="https://wa.me/254795973253?text=Good%20day%2C%20I%20would%20like%20to%20book%20a%20Notary%20Public%20/%20Commissioner%20for%20Oaths%20appointment.%20Document%20type%3A%20.%20Preferred%20date%3A%20.">Book via WhatsApp</a>
+        <a class="btn" href="mailto:info@rmc-advocates.com?subject=Notary%20%2F%20Commissioner%20for%20Oaths%20Appointment">Email Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gz-callout-strip">
+  <div class="container">
+    <div class="gz-callout">
+      <div>
+        <h3>Search the Kenya Gazette</h3>
+        <p class="muted">Download the latest issue or find a notice by number, name or title number.</p>
+      </div>
+      <form action="gazette.html" method="get" role="search">
+        <input type="search" name="q" placeholder="Notice no., name or title number" aria-label="Search the Kenya Gazette">
+        <button class="btn primary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 
 <section class="section">
   <div class="container">
@@ -340,6 +412,7 @@
 <div class="people-grid">
 
       <article class="person-card featured">
+        <div class="avatar" aria-hidden="true"><img src="assets/people/rodgers-mwangi.jpg" alt="" loading="lazy" onerror="this.remove()"><span>RM</span></div>
         <h3>Rodgers Mwangi</h3>
         <div class="meta">Managing Partner</div>
         <p class="quote">“Every dispute has a legal solution; few have a simple one.”</p>
@@ -348,33 +421,9 @@
 </div>
 <h3 class="section-kicker">Associates</h3>
 <div class="people-grid">
-
           <article class="person-card">
-            <h4>Jason Ogoti</h4>
-            
-            <div class="meta">Associate</div>
-            <p class="quote">“The best legal advice anticipates risk before it becomes dispute.”</p>
-          </article>
-        
-
-          <article class="person-card">
-            <h4>Omwenga Kwamboka</h4>
-            
-            <div class="meta">Associate</div>
-            <p class="quote">“Litigation rewards preparation long before the first appearance.”</p>
-          </article>
-        
-
-          <article class="person-card">
-            <h4>Masavilu Nelson</h4>
-            
-            <div class="meta">Associate</div>
-            <p class="quote">“A well-advised transaction prevents a costly argument.”</p>
-          </article>
-        
-
-          <article class="person-card">
-            <h4>Wangui Kihiu</h4>
+            <div class="avatar" aria-hidden="true"><img src="assets/people/wangui-kihiu.jpg" alt="" loading="lazy" onerror="this.remove()"><span>WK</span></div>
+        <h4>Wangui Kihiu</h4>
             
             <div class="meta">Associate</div>
             <p class="quote">“Effective advocacy begins long before one enters the courtroom.”</p>
@@ -382,7 +431,8 @@
         
 
           <article class="person-card">
-            <h4>Suleiman M. Salim</h4>
+            <div class="avatar" aria-hidden="true"><img src="assets/people/suleiman-m-salim.jpg" alt="" loading="lazy" onerror="this.remove()"><span>SS</span></div>
+        <h4>Suleiman M. Salim</h4>
             
             <div class="meta">Associate</div>
             <p class="quote">“Legal solutions must serve both the law and the client’s objectives.”</p>
@@ -390,7 +440,8 @@
         
 
           <article class="person-card">
-            <h4>Mwangi S. Kuria</h4>
+            <div class="avatar" aria-hidden="true"><img src="assets/people/mwangi-s-kuria.jpg" alt="" loading="lazy" onerror="this.remove()"><span>MK</span></div>
+        <h4>Mwangi S. Kuria</h4>
             
             <div class="meta">Associate</div>
             <p class="quote">“In contested matters, discipline often prevails over aggression.”</p>
@@ -398,7 +449,8 @@
         
 
           <article class="person-card">
-            <h4>Mwaura A. Gichomo</h4>
+            <div class="avatar" aria-hidden="true"><img src="assets/people/mwaura-a-gichomo.jpg" alt="" loading="lazy" onerror="this.remove()"><span>MG</span></div>
+        <h4>Mwaura A. Gichomo</h4>
             
             <div class="meta">Associate</div>
             <p class="quote">“In law, strategy is as important as correctness.”</p>
@@ -406,7 +458,8 @@
         
 
           <article class="person-card">
-            <h4>Mwaura M. Nduati</h4>
+            <div class="avatar" aria-hidden="true"><img src="assets/people/mwaura-m-nduati.jpg" alt="" loading="lazy" onerror="this.remove()"><span>MN</span></div>
+        <h4>Mwaura M. Nduati</h4>
             
             <div class="meta">Associate</div>
             <p class="quote">“The law favours those who prepare their case, not those who protest it.”</p>
@@ -414,7 +467,8 @@
         
 
           <article class="person-card">
-            <h4>Brenda Mukami</h4>
+            <div class="avatar" aria-hidden="true"><img src="assets/people/brenda-mukami.jpg" alt="" loading="lazy" onerror="this.remove()"><span>BM</span></div>
+        <h4>Brenda Mukami</h4>
             
             <div class="meta">Associate</div>
             <p class="quote">“Sound legal judgment is measured by outcomes, not argument.”</p>
@@ -446,10 +500,21 @@
           <div style="margin-top:10px">
             
           </div>
-          <div style="margin-top:14px" class="legal">© 2026 the firm. All Rights Reserved.</div>
+          <div style="margin-top:14px" class="legal">© 2026 Rodgers Mwangi &amp; Company Advocates. All Rights Reserved.</div>
         </div>
       </div>
     </div>
+  <div class="world-clocks">
+    <div class="container">
+      <div class="clocks-label">Working across time zones</div>
+      <div class="clocks-row">
+        <div class="clock" data-tz="Africa/Nairobi"><span class="clock-city">Nairobi</span><span class="clock-time">--:--</span><span class="clock-day"></span></div>
+        <div class="clock" data-tz="Africa/Lagos"><span class="clock-city">Lagos</span><span class="clock-time">--:--</span><span class="clock-day"></span></div>
+        <div class="clock" data-tz="Asia/Kolkata"><span class="clock-city">New Delhi</span><span class="clock-time">--:--</span><span class="clock-day"></span></div>
+        <div class="clock" data-tz="America/New_York"><span class="clock-city">New York</span><span class="clock-time">--:--</span><span class="clock-day"></span></div>
+      </div>
+    </div>
+  </div>
   <div class="footer-links" style="padding:0 0 22px 0;">
   <div class="container">
     <p class="muted" style="margin:10px 0 0 0;">
@@ -457,7 +522,9 @@
       <a href="case-studies.html">Case Studies</a> &nbsp;|&nbsp;
       <a href="engagement-fees.html">Engagement &amp; Fees</a> &nbsp;|&nbsp;
       <a href="why-rmc.html">Why RMC</a> &nbsp;|&nbsp;
-      <a href="submit-instructions.html">Submit Instructions</a>
+      <a href="submit-instructions.html">Submit Instructions</a> &nbsp;|&nbsp;
+      <a href="gazette.html">Kenya Gazette</a> &nbsp;|&nbsp;
+      <a href="privacy.html">Privacy Notice</a>
     </p>
   </div>
 </div>

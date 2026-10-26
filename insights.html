@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@500;600&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LegalService", "name": "Rodgers Mwangi & Company Advocates", "url": "https://www.rmcadvocates.com", "areaServed": "Nairobi, Kenya", "address": {"@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE"}, "email": "info@rmc-advocates.com"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LegalService", "name": "Rodgers Mwangi & Company Advocates", "url": "https://www.rmc-advocates.com", "areaServed": "Nairobi, Kenya", "address": {"@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE"}, "email": "info@rmc-advocates.com"}</script>
 </head>
 <body>
     <div class="topbar">
@@ -37,10 +37,13 @@
             <div class="wordmark-commissioner">Commissioner for Oaths and Notary Public</div>
           </div>
         </div>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+          <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+        </button>
         
       </div>
       <div class="navbar">
-        <nav class="nav" aria-label="Primary navigation">
+        <nav class="nav" id="primary-nav" aria-label="Primary navigation">
           <a href="index.html">Home</a>
           <a href="the-firm.html">The Firm</a>
           <a href="practice-areas.html">Practice Areas</a>
@@ -55,7 +58,13 @@
             </div>
           </div>
 
-          <a href="insights.html">Insights</a>
+          <div class="nav-item has-dropdown">
+            <a href="insights.html" class="nav-link">Insights</a>
+            <div class="dropdown" role="menu" aria-label="Insights menu">
+              <a href="insights.html" role="menuitem">Briefings</a>
+              <a href="gazette.html" role="menuitem">Kenya Gazette</a>
+            </div>
+          </div>
 
           <div class="nav-item has-dropdown">
             <a href="international-counsel.html" class="nav-link">International</a>
@@ -67,6 +76,7 @@
           </div>
 
           <a href="contact.html">Contact</a>
+          <a href="zh.html" lang="zh-Hans" class="nav-zh">中文</a>
 
           <div class="nav-consults">
             <a class="btn btn-icon" href="mailto:info@rmc-advocates.com?subject=Initial%20Client%20Consult%20Request&body=Good%20day%2C%0A%0AI%20would%20like%20to%20book%20an%20initial%20client%20consult.%0A%0AName%3A%0APhone%3A%0AMatter%20summary%3A%0A%0AKind%20regards%2C">
@@ -81,7 +91,7 @@
               </span>
               <span>Book Consult (WhatsApp)</span>
             </a>
-            <a class="btn" href="#" title="微信号 WeChat ID: RMC_Advocates" onclick="try{navigator.clipboard.writeText('RMC_Advocates');}catch(e){}alert('微信号已复制 / WeChat ID copied:\n\nRMC_Advocates\n\n请在微信中搜索添加 / Search this ID in WeChat to add us.');return false;">
+            <a class="btn" href="zh.html#zh-contact" title="微信号 WeChat ID: RMC_Advocates" lang="zh-Hans">
               <span class="btn-ico" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.69 4C4.99 4 2 6.55 2 9.7c0 1.79.97 3.38 2.49 4.42l-.62 1.88 2.18-1.1c.55.15 1.12.25 1.72.28-.11-.4-.17-.81-.17-1.24 0-3.02 2.93-5.46 6.55-5.46.23 0 .46.01.68.03C14.19 6.08 11.69 4 8.69 4zM6.5 8.28c-.46 0-.83-.37-.83-.83s.37-.83.83-.83.83.37.83.83-.37.83-.83.83zm4.4 0c-.46 0-.83-.37-.83-.83s.37-.83.83-.83.83.37.83.83-.38.83-.83.83zM22 13.94c0-2.6-2.53-4.7-5.65-4.7s-5.65 2.1-5.65 4.7 2.53 4.7 5.65 4.7c.62 0 1.22-.08 1.78-.23l1.94.98-.54-1.65C20.99 16.86 22 15.49 22 13.94zm-7.55-.72c-.38 0-.69-.31-.69-.69s.31-.69.69-.69.69.31.69.69-.31.69-.69.69zm3.8 0c-.38 0-.69-.31-.69-.69s.31-.69.69-.69.69.31.69.69-.31.69-.69.69z"/></svg>
               </span>
@@ -112,9 +122,93 @@
   </div>
 </section>
 
+
+<section class="section briefings-section">
+  <div class="container">
+    <div class="badge"><span class="dot"></span>Featured Briefings</div>
+    <h2>Recent client briefings</h2>
+    <p class="muted">Short notes on questions we are asked most often. Select a briefing to read it.</p>
+
+    <details class="briefing">
+      <summary>
+        <span class="briefing-meta">Insolvency &amp; Restructuring · October 2026</span>
+        <span class="briefing-title">Business Rescue under the Insolvency Act, 2015: Options Before Liquidation</span>
+      </summary>
+      <div class="briefing-body">
+        <p>The Insolvency Act, 2015 (No. 18 of 2015) replaced the Bankruptcy Act (Cap. 53) and moved corporate insolvency out of the former Companies Act (Cap. 486). Its central shift is towards rescue: a financially distressed company has structured options short of being wound up.</p>
+        <h4>Administration</h4>
+        <p>An administrator, who must be a licensed insolvency practitioner, takes control of the company with the aim of rescuing it as a going concern or, failing that, achieving a better result for creditors than an immediate liquidation. A moratorium protects the company while the process runs: creditors generally cannot enforce security or begin or continue proceedings without the administrator's consent or the court's permission.</p>
+        <h4>Company voluntary arrangement (CVA)</h4>
+        <p>Directors may propose a compromise with creditors, supervised by an insolvency practitioner. Once approved by the required majorities, it binds the creditors who were entitled to vote, allowing the business to continue while debts are restructured.</p>
+        <h4>Liquidation</h4>
+        <p>Where rescue is not realistic, liquidation (voluntary or by the court) realises the company's assets and distributes the proceeds in the statutory order of priority.</p>
+        <h4>Practical points</h4>
+        <ul>
+          <li><strong>Creditors:</strong> confirm your security is properly registered, lodge proofs of debt promptly and engage early with the appointed practitioner.</li>
+          <li><strong>Directors:</strong> take advice as soon as insolvency is foreseeable. The Act exposes directors to personal liability for fraudulent trading and for improper trading while insolvent.</li>
+          <li><strong>Timing:</strong> rescue options are most effective when used before enforcement action has started.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="briefing">
+      <summary>
+        <span class="briefing-meta">Property &amp; Conveyancing · October 2026</span>
+        <span class="briefing-title">Buying Land in Kenya: A Due Diligence Checklist</span>
+      </summary>
+      <div class="briefing-body">
+        <p>Land transactions are governed principally by the Land Registration Act, 2012 and the Land Act, 2012. Most disputes we see could have been avoided by disciplined checks before any money changed hands.</p>
+        <h4>Before you commit</h4>
+        <ul>
+          <li><strong>Official search</strong> at the relevant land registry (or on Ardhisasa for registries that have migrated) to confirm the registered owner and any charges, cautions or restrictions.</li>
+          <li><strong>Seller's identity and authority:</strong> verify identification documents; for a company seller, obtain a current CR12 and a board resolution authorising the sale.</li>
+          <li><strong>Consents:</strong> Land Control Board consent is required for agricultural land, and a spouse's consent may be required where the property is matrimonial property.</li>
+          <li><strong>Ground check:</strong> visit the property, confirm who is in occupation, and have a licensed surveyor confirm boundaries against the registry map.</li>
+          <li><strong>Outgoings:</strong> obtain rates clearance and, for leasehold titles, land rent clearance.</li>
+        </ul>
+        <h4>At completion</h4>
+        <ul>
+          <li>Hold the purchase price through advocates' professional undertakings or an escrow arrangement, not direct payment to the seller.</li>
+          <li>Pay stamp duty (generally 4% of value for land within municipalities and 2% elsewhere) and lodge the transfer for registration promptly.</li>
+          <li>Conduct a final search immediately before completion to catch any late entries.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="briefing">
+      <summary>
+        <span class="briefing-meta">Immigration &amp; Employment · October 2026</span>
+        <span class="briefing-title">Employing Foreign Nationals in Kenya: Work Permit Essentials</span>
+      </summary>
+      <div class="briefing-body">
+        <p>Work permits are governed by the Kenya Citizenship and Immigration Act, 2011 and its regulations, and applications are made online through the Department of Immigration Services on eCitizen.</p>
+        <h4>Choosing the right class</h4>
+        <ul>
+          <li><strong>Class D</strong> covers employment by a specific employer in a specific role.</li>
+          <li><strong>Class G</strong> covers investors engaging in a specific trade, business or consultancy.</li>
+          <li><strong>Dependant's passes</strong> are available for spouses and children of permit holders.</li>
+        </ul>
+        <h4>What the application must show</h4>
+        <ul>
+          <li>That the skills are not readily available locally, typically supported by evidence of the role and the candidate's qualifications.</li>
+          <li>A plan for skills transfer, usually by naming a Kenyan understudy.</li>
+          <li>Company documents for the employer (including registration details and tax compliance) and the candidate's passport, CV and certificates.</li>
+        </ul>
+        <h4>Practical points</h4>
+        <ul>
+          <li>Build in processing time before the start date. A Special Pass may be available for limited short-term activity in some cases.</li>
+          <li>Requirements and government fees change from time to time, so confirm the current position before filing.</li>
+        </ul>
+      </div>
+    </details>
+
+    <p class="legal briefing-note">These briefings are general information current as at October 2026 and are not legal advice. Contact us for advice on your circumstances.</p>
+  </div>
+</section>
+
 <section class="section dark">
   <div class="container">
-    <h2>Latest Briefings</h2>
+    <h2>More Topics</h2>
     <div class="grid-4" style="margin-top:14px">
   <div class="card"><h3>Commercial Contracts: Risk Allocation that Works</h3><p class="muted">Practical drafting on payment security, termination, limitation of liability, and dispute clauses.</p></div>
   <div class="card"><h3>Kenyan Property Due Diligence: Checklist</h3><p class="muted">Searches, title review, consents, completion sequencing, and post-completion risk management.</p></div>
@@ -150,10 +244,21 @@
           <div style="margin-top:10px">
             
           </div>
-          <div style="margin-top:14px" class="legal">© 2026 the firm. All Rights Reserved.</div>
+          <div style="margin-top:14px" class="legal">© 2026 Rodgers Mwangi &amp; Company Advocates. All Rights Reserved.</div>
         </div>
       </div>
     </div>
+  <div class="world-clocks">
+    <div class="container">
+      <div class="clocks-label">Working across time zones</div>
+      <div class="clocks-row">
+        <div class="clock" data-tz="Africa/Nairobi"><span class="clock-city">Nairobi</span><span class="clock-time">--:--</span><span class="clock-day"></span></div>
+        <div class="clock" data-tz="Africa/Lagos"><span class="clock-city">Lagos</span><span class="clock-time">--:--</span><span class="clock-day"></span></div>
+        <div class="clock" data-tz="Asia/Kolkata"><span class="clock-city">New Delhi</span><span class="clock-time">--:--</span><span class="clock-day"></span></div>
+        <div class="clock" data-tz="America/New_York"><span class="clock-city">New York</span><span class="clock-time">--:--</span><span class="clock-day"></span></div>
+      </div>
+    </div>
+  </div>
   <div class="footer-links" style="padding:0 0 22px 0;">
   <div class="container">
     <p class="muted" style="margin:10px 0 0 0;">
@@ -161,7 +266,9 @@
       <a href="case-studies.html">Case Studies</a> &nbsp;|&nbsp;
       <a href="engagement-fees.html">Engagement &amp; Fees</a> &nbsp;|&nbsp;
       <a href="why-rmc.html">Why RMC</a> &nbsp;|&nbsp;
-      <a href="submit-instructions.html">Submit Instructions</a>
+      <a href="submit-instructions.html">Submit Instructions</a> &nbsp;|&nbsp;
+      <a href="gazette.html">Kenya Gazette</a> &nbsp;|&nbsp;
+      <a href="privacy.html">Privacy Notice</a>
     </p>
   </div>
 </div>

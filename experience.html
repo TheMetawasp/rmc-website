@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@500;600&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LegalService", "name": "Rodgers Mwangi & Company Advocates", "url": "https://www.rmcadvocates.com", "areaServed": "Nairobi, Kenya", "address": {"@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE"}, "email": "info@rmc-advocates.com"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "LegalService", "name": "Rodgers Mwangi & Company Advocates", "url": "https://www.rmc-advocates.com", "areaServed": "Nairobi, Kenya", "address": {"@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE"}, "email": "info@rmc-advocates.com"}</script>
 </head>
 <body>
     <div class="topbar">
@@ -37,10 +37,13 @@
             <div class="wordmark-commissioner">Commissioner for Oaths and Notary Public</div>
           </div>
         </div>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+          <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+        </button>
         
       </div>
       <div class="navbar">
-        <nav class="nav" aria-label="Primary navigation">
+        <nav class="nav" id="primary-nav" aria-label="Primary navigation">
           <a href="index.html">Home</a>
           <a href="the-firm.html">The Firm</a>
           <a href="practice-areas.html">Practice Areas</a>
@@ -55,7 +58,13 @@
             </div>
           </div>
 
-          <a href="insights.html">Insights</a>
+          <div class="nav-item has-dropdown">
+            <a href="insights.html" class="nav-link">Insights</a>
+            <div class="dropdown" role="menu" aria-label="Insights menu">
+              <a href="insights.html" role="menuitem">Briefings</a>
+              <a href="gazette.html" role="menuitem">Kenya Gazette</a>
+            </div>
+          </div>
 
           <div class="nav-item has-dropdown">
             <a href="international-counsel.html" class="nav-link">International</a>
@@ -67,6 +76,7 @@
           </div>
 
           <a href="contact.html">Contact</a>
+          <a href="zh.html" lang="zh-Hans" class="nav-zh">中文</a>
 
           <div class="nav-consults">
             <a class="btn btn-icon" href="mailto:info@rmc-advocates.com?subject=Initial%20Client%20Consult%20Request&body=Good%20day%2C%0A%0AI%20would%20like%20to%20book%20an%20initial%20client%20consult.%0A%0AName%3A%0APhone%3A%0AMatter%20summary%3A%0A%0AKind%20regards%2C">
@@ -81,7 +91,7 @@
               </span>
               <span>Book Consult (WhatsApp)</span>
             </a>
-            <a class="btn" href="#" title="微信号 WeChat ID: RMC_Advocates" onclick="try{navigator.clipboard.writeText('RMC_Advocates');}catch(e){}alert('微信号已复制 / WeChat ID copied:\n\nRMC_Advocates\n\n请在微信中搜索添加 / Search this ID in WeChat to add us.');return false;">
+            <a class="btn" href="zh.html#zh-contact" title="微信号 WeChat ID: RMC_Advocates" lang="zh-Hans">
               <span class="btn-ico" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8.69 4C4.99 4 2 6.55 2 9.7c0 1.79.97 3.38 2.49 4.42l-.62 1.88 2.18-1.1c.55.15 1.12.25 1.72.28-.11-.4-.17-.81-.17-1.24 0-3.02 2.93-5.46 6.55-5.46.23 0 .46.01.68.03C14.19 6.08 11.69 4 8.69 4zM6.5 8.28c-.46 0-.83-.37-.83-.83s.37-.83.83-.83.83.37.83.83-.37.83-.83.83zm4.4 0c-.46 0-.83-.37-.83-.83s.37-.83.83-.83.83.37.83.83-.38.83-.83.83zM22 13.94c0-2.6-2.53-4.7-5.65-4.7s-5.65 2.1-5.65 4.7 2.53 4.7 5.65 4.7c.62 0 1.22-.08 1.78-.23l1.94.98-.54-1.65C20.99 16.86 22 15.49 22 13.94zm-7.55-.72c-.38 0-.69-.31-.69-.69s.31-.69.69-.69.69.31.69.69-.31.69-.69.69zm3.8 0c-.38 0-.69-.31-.69-.69s.31-.69.69-.69.69.31.69.69-.31.69-.69.69z"/></svg>
               </span>
@@ -144,10 +154,21 @@
           <div style="margin-top:10px">
             
           </div>
-          <div style="margin-top:14px" class="legal">© 2026 the firm. All Rights Reserved.</div>
+          <div style="margin-top:14px" class="legal">© 2026 Rodgers Mwangi &amp; Company Advocates. All Rights Reserved.</div>
         </div>
       </div>
     </div>
+  <div class="world-clocks">
+    <div class="container">
+      <div class="clocks-label">Working across time zones</div>
+      <div class="clocks-row">
+        <div class="clock" data-tz="Africa/Nairobi"><span class="clock-city">Nairobi</span><span class="clock-time">--:--</span><span class="clock-day"></span></div>
+        <div class="clock" data-tz="Africa/Lagos"><span class="clock-city">Lagos</span><span class="clock-time">--:--</span><span class="clock-day"></span></div>
+        <div class="clock" data-tz="Asia/Kolkata"><span class="clock-city">New Delhi</span><span class="clock-time">--:--</span><span class="clock-day"></span></div>
+        <div class="clock" data-tz="America/New_York"><span class="clock-city">New York</span><span class="clock-time">--:--</span><span class="clock-day"></span></div>
+      </div>
+    </div>
+  </div>
   <div class="footer-links" style="padding:0 0 22px 0;">
   <div class="container">
     <p class="muted" style="margin:10px 0 0 0;">
@@ -155,7 +176,9 @@
       <a href="case-studies.html">Case Studies</a> &nbsp;|&nbsp;
       <a href="engagement-fees.html">Engagement &amp; Fees</a> &nbsp;|&nbsp;
       <a href="why-rmc.html">Why RMC</a> &nbsp;|&nbsp;
-      <a href="submit-instructions.html">Submit Instructions</a>
+      <a href="submit-instructions.html">Submit Instructions</a> &nbsp;|&nbsp;
+      <a href="gazette.html">Kenya Gazette</a> &nbsp;|&nbsp;
+      <a href="privacy.html">Privacy Notice</a>
     </p>
   </div>
 </div>
