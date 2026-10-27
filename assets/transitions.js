@@ -128,7 +128,8 @@
       const el = document.querySelector(href);
       if(el){
         e.preventDefault();
-        el.scrollIntoView({behavior: prefersReduced ? 'auto' : 'smooth', block:'start'});
+        if(window.__lenis) window.__lenis.scrollTo(el, {offset:-90, duration:1.4});
+        else el.scrollIntoView({behavior: prefersReduced ? 'auto' : 'smooth', block:'start'});
         history.pushState(null,'',href);
       }
       return;
@@ -143,6 +144,91 @@
     document.documentElement.classList.add('page-out');
     window.setTimeout(()=>{ window.location.href = href; }, 180);
   }, true);
+
+  /* ---------- Gliding scroll (desktop mouse / trackpad only) ---------- */
+  (function(){
+    if(prefersReduced || !window.Lenis) return;
+    if(!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;   // phones keep native touch scrolling
+    try{
+      const lenis = new Lenis({
+        lerp: 0.075,              // lower = longer, silkier glide
+        wheelMultiplier: 0.95,
+        smoothWheel: true,
+        autoRaf: true,
+        prevent: node => !!(node.closest && node.closest('[data-lenis-prevent], textarea, select, .gz-index-list, .dropdown, .mini-bar .nav'))
+      });
+      window.__lenis = lenis;
+    }catch(e){}
+  })();
+
+  /* ---------- Compact header that appears once the main header scrolls away ---------- */
+  (function(){
+    const topbar = document.querySelector('.topbar');
+    const nav = topbar && topbar.querySelector('.nav');
+    if(!topbar || !nav) return;
+    const bar = document.createElement('div');
+    bar.className = 'mini-bar';
+    bar.innerHTML =
+      '<div class="container mini-inner">' +
+        '<a class="mini-brand" href="index.html"><img src="assets/rmc_emblem.png" alt="">' +
+          '<span class="mini-words"><span class="mini-name">Rodgers Mwangi &amp; Company</span><span class="mini-sub">Advocates</span></span></a>' +
+        '<button class="mini-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
+      '</div>';
+    const navClone = nav.cloneNode(true);
+    navClone.removeAttribute('id');
+    navClone.setAttribute('aria-label', 'Primary navigation');
+    navClone.classList.add('mini-nav');
+    bar.querySelector('.mini-inner').insertBefore(navClone, bar.querySelector('.mini-toggle'));
+    document.body.appendChild(bar);
+    const toggle = bar.querySelector('.mini-toggle');
+    const setOpen = open => {
+      bar.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    toggle.addEventListener('click', () => setOpen(!bar.classList.contains('open')));
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') setOpen(false); });
+    let shown = null;
+    const update = () => {
+      const show = window.scrollY > (topbar.offsetTop + topbar.offsetHeight - 4);
+      if(show === shown) return;
+      shown = show;
+      bar.classList.toggle('show', show);
+      bar.inert = !show;
+      if(!show) setOpen(false);
+    };
+    bar.inert = true;
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  /* ---------- Gold reading-progress line and back-to-top ---------- */
+  (function(){
+    const prog = document.createElement('div');
+    prog.className = 'scroll-progress'; prog.setAttribute('aria-hidden', 'true');
+    prog.innerHTML = '<span></span>';
+    const top = document.createElement('button');
+    top.className = 'to-top'; top.type = 'button'; top.setAttribute('aria-label', 'Back to top');
+    top.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M6 14l6-6 6 6"/></svg>';
+    document.body.appendChild(prog); document.body.appendChild(top);
+    const bar = prog.firstChild;
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      bar.style.transform = 'scaleX(' + p.toFixed(4) + ')';
+      top.classList.toggle('show', window.scrollY > 900);
+    };
+    window.addEventListener('scroll', () => { if(!ticking){ ticking = true; requestAnimationFrame(update); } }, {passive:true});
+    window.addEventListener('resize', update);
+    update();
+    top.addEventListener('click', () => {
+      if(window.__lenis) window.__lenis.scrollTo(0, {duration:1.6});
+      else window.scrollTo({top:0, behavior: prefersReduced ? 'auto' : 'smooth'});
+    });
+  })();
 
   if(prefersReduced) return;
 
@@ -171,26 +257,30 @@
     // Very tall blocks (e.g. a full Gazette issue) can never be 12% visible, so show them straight away
     if(el.offsetHeight > window.innerHeight * 1.2 || el.closest('.gz-issue, .gz-hub')) return;
     el.classList.add('reveal');
-    el.style.setProperty('--reveal-delay', (Math.min(i, 10) * 70) + 'ms');
     i++;
   });
 
   // Reveal observer
+  let ioWorking = false;
   const io = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
-      }
+    ioWorking = true;
+    // elements arriving together cascade in gently, top to bottom
+    const arriving = entries.filter(en => en.isIntersecting)
+      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top || a.boundingClientRect.left - b.boundingClientRect.left);
+    arriving.forEach((entry, k)=>{
+      entry.target.style.setProperty('--reveal-delay', Math.min(k, 5) * 90 + 'ms');
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
     });
-  }, {threshold: 0.05, rootMargin: '0px 0px -5% 0px'});
+  }, {threshold: 0.08, rootMargin: '0px 0px -6% 0px'});
 
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   // Fallback: never leave content hidden if the observer doesn't fire
-  window.setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>{
+  // (only when the observer is not running at all, e.g. some embedded previews)
+  window.setTimeout(()=>{ if(!ioWorking) document.querySelectorAll('.reveal:not(.in)').forEach(el=>{
     const r=el.getBoundingClientRect(); if(r.top < window.innerHeight*1.5) el.classList.add('in');
-  }), 1200);
-  window.setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>el.classList.add('in')), 4000);
+  }); }, 1200);
+  window.setTimeout(()=>{ if(!ioWorking) document.querySelectorAll('.reveal:not(.in)').forEach(el=>el.classList.add('in')); }, 4000);
 
   // Header shadow on scroll
   const topbar = document.querySelector('.topbar');
