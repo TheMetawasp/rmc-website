@@ -1,10 +1,10 @@
 (function(){
   function setActiveNav(){
     try{
-      const path = (window.location.pathname.split('/').pop() || 'index.html');
+      let path = (window.location.pathname.split('/').pop() || 'index.html');
+      if(path === 'index.html') path = './';
       document.querySelectorAll('.nav a').forEach(a=>a.classList.remove('active'));
-      const direct = document.querySelector('.nav a[href="'+path+'"]');
-      if(direct) direct.classList.add('active');
+      document.querySelectorAll('.nav a[href="'+path+'"]').forEach(a=>a.classList.add('active'));
       // Mark parents for dropdowns
       document.querySelectorAll('.has-dropdown').forEach(d=>{
         const any = d.querySelector('.dropdown a.active');
@@ -136,7 +136,7 @@
     }
 
     // Only handle same-folder html navigation
-    const isHtml = href.endsWith('.html') || (!href.includes(':') && !href.includes('/') && href.length);
+    const isHtml = href === './' || href.endsWith('.html') || (!href.includes(':') && !href.includes('/') && href.length);
     if(!isHtml) return;
     if(prefersReduced) return;
 
@@ -170,7 +170,7 @@
     bar.className = 'mini-bar';
     bar.innerHTML =
       '<div class="container mini-inner">' +
-        '<a class="mini-brand" href="index.html"><img src="assets/rmc_emblem.png" alt="">' +
+        '<a class="mini-brand" href="./"><img src="assets/rmc_emblem.png" alt="">' +
           '<span class="mini-words"><span class="mini-name">Rodgers Mwangi &amp; Company</span><span class="mini-sub">Advocates</span></span></a>' +
         '<button class="mini-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
       '</div>';

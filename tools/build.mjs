@@ -229,7 +229,7 @@ async function processArticles(){
       })}</script>`;
       const body = `<section class="page-hero">
   <div class="container">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="insights.html">Insights</a><span aria-hidden="true">/</span><span aria-current="page">Article</span></nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a><span aria-hidden="true">/</span><a href="insights.html">Insights</a><span aria-hidden="true">/</span><span aria-current="page">Article</span></nav>
     <h1>${esc(title)}</h1>
     <div class="article-meta">${esc(longDate(date))} · Rodgers Mwangi &amp; Company Advocates · ${minutes} min read</div>
   </div>
